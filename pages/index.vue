@@ -30,10 +30,7 @@
         <v-responsive class="mx-auto overflow-visible" max-width="1024">
           <v-row class="cover-content">
             <v-col cols="12" md="6" lg="6">
-              <h1
-                :class="[ $vuetify.breakpoint.mdAndUp ? 'display-4' : 'display-3']"
-                class="mb-5"
-              >We Adapt</h1>
+              <h1 :class="[ isMobile ? 'display-3' : 'display-4']" class="mb-5">We Adapt</h1>
 
               <p
                 class="mt-4 mb-5 d-inline-block body-1 medGrey--text"
@@ -124,10 +121,7 @@
     <section class="services white">
       <v-container class="text-center text-md-left py-5">
         <v-responsive class="mx-auto overflow-visible" max-width="1024">
-          <h2
-            :class="[ $vuetify.breakpoint.mdAndUp ? 'display-3' : 'display-2']"
-            class="text-center mb-5"
-          >How We Help</h2>
+          <h2 :class="[ isMobile ? 'display-2' : 'display-3']" class="text-center mb-5">How We Help</h2>
           <v-row class="py-5">
             <v-col v-for="(service, index) in services" :key="index" cols="12" md="6">
               <v-hover v-slot:default="{ hover }">
@@ -159,7 +153,7 @@
       <v-container class="text-center text-md-left py-5">
         <v-responsive class="mx-auto overflow-visible" max-width="1024">
           <h2
-            :class="[ $vuetify.breakpoint.mdAndUp ? 'display-3' : 'display-2']"
+            :class="[ isMobile ? 'display-2' : 'display-3']"
             class="text-center mb-5"
           >We Make It Easy</h2>
           <v-row class="py-5">
@@ -287,8 +281,25 @@ export default {
             expanded: false
           }
         ]
-      }
+      },
+      isMobile: false
     };
+  },
+  beforeDestroy() {
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.onResize, { passive: true });
+    }
+  },
+
+  mounted() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize, { passive: true });
+  },
+
+  methods: {
+    onResize() {
+      this.isMobile = window.innerWidth < 600;
+    }
   }
 };
 </script>
