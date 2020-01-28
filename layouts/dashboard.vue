@@ -1,6 +1,6 @@
 <template>
 <!-- Dashboard rendered as SPA -->
-<no-ssr>
+<!-- <client-only> -->
   <v-app>
     <dashNavbar />
     <v-content class="darkest--text">
@@ -14,7 +14,7 @@
       <span>&copy; 2019</span>
     </v-footer>
   </v-app>
-</no-ssr>
+<!-- </client-only> -->
 </template>
 
 <script>

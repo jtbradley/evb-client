@@ -5,10 +5,12 @@
 </template>
 
 <script>
-import QuoteCalculator from '@/components/QuoteCalculator';
+import QuoteCalculator from "@/components/QuoteCalculator";
+
 export default {
+  layout: "auth",
   components: {
     QuoteCalculator
   }
-}
+};
 </script>

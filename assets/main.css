@@ -9,14 +9,28 @@
 /* Global Font */
 @font-face{
   font-family: Futura;
-  src: url('/assets/fonts/FuturaPTMedium.otf') format("opentype");
+  src: url('../assets/fonts/FuturaPTMedium.otf') format("opentype");
   font-weight: 500;   }
 
 @font-face{
   font-family: Futura;
-  src: url('/assets/fonts/FuturaPTBold.otf') format("opentype");
+  src: url('../assets/fonts/FuturaPTBold.otf') format("opentype");
   font-weight: 800;
   }
+
+/* Helpers */
+
+.p-absolute{
+  position: absolute !important;
+}
+
+.p-relative{
+  position: relative !important;
+}
+
+.unstyled{
+  list-style: none;
+}
 
 /* Gradients */
  .panel{
@@ -52,3 +66,32 @@
   background: linear-gradient(135deg, rgba(79,26,153,1) 0%, rgba(96,44,165,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f1a99', endColorstr='#602ca5', GradientType=1 );
  }
+
+.floating {
+    animation-name: floating;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    /* margin-left:30px; */
+    margin-top: -3px;
+}
+
+.v-navigation-drawer__content .childless .v-list-item__icon {
+  display: none !important;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 12px); }
+    to   { transform: translate(0, 0px); }
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 600px) {
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+/*  */

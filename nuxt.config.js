@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -88,6 +88,7 @@ export default {
           primary: '#7D45C2',
           secondary: '#E6D1FF',
           accent: '#809CDB',
+          softAccent: '#E5E8FA',
           softGrey: '#E5E8FA',
           medGrey: '#696969',
           darkest: '#333333',
@@ -97,6 +98,7 @@ export default {
           primary: '#7D45C2',
           secondary: '#E6D1FF',
           accent: '#809CDB',
+          softAccent: '#E5E8FA',
           softGrey: '#E5E8FA',
           medGrey: '#696969',
           darkest: '#333333',
@@ -118,7 +120,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }
