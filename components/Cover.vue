@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 section.cover {
-  margin-top: -140px;
+  margin-top: -70px;
   padding-top: 70px !important;
   padding-bottom: 70px !important;
   position: relative;

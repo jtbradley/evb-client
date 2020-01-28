@@ -2,21 +2,21 @@
   <v-app-bar fixed flat app height="70" :class="[ scrolled ? 'white elevation-4' : 'transparent']">
     <v-container class="pa-0 d-flex">
       <nuxt-link to="/">
-        <v-toolbar-title v-if="$vuetify.breakpoint.smAndDown || !isHome">
+        <v-toolbar-title v-show="$vuetify.breakpoint.smAndDown || !isHome">
           <img
             width="85"
             :src="[!scrolled ? require('@/static/everbrand-logo-dark.svg') : require('@/static/everbrand-logo.svg')]"
             alt="Everbrand"
           />
         </v-toolbar-title>
-        <v-toolbar-title v-if="$vuetify.breakpoint.mdAndUp && isHome">
+        <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp && isHome">
           <v-img width="85" src="/everbrand-logo.svg" alt="Everbrand" />
         </v-toolbar-title>
       </nuxt-link>
 
       <v-spacer />
 
-      <v-toolbar-items v-if="$vuetify.breakpoint.smAndUp">
+      <v-toolbar-items v-show="$vuetify.breakpoint.smAndUp">
         <v-menu
           v-for="(TopItem, index) in MainNav"
           :key="index"

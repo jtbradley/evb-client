@@ -2,7 +2,7 @@
   <div>
     <section class="cover white pb-5 pt-0">
       <!-- Desktop Cover Creative -->
-      <div class="cover-creative full gradient p-absolute" v-if="$vuetify.breakpoint.mdAndUp">
+      <div class="cover-creative full gradient p-absolute" v-show="$vuetify.breakpoint.mdAndUp">
         <v-img
           :src="cover.balloon"
           aspect-ratio="0.6766"
@@ -14,7 +14,7 @@
       <!--  -->
 
       <!-- Mobile Cover Creative -->
-      <div class="gradient cover-creative mob p-relative" v-if="$vuetify.breakpoint.smAndDown">
+      <div class="gradient cover-creative mob p-relative" v-show="$vuetify.breakpoint.smAndDown">
         <v-img
           :src="cover.balloon"
           aspect-ratio="0.6766"
@@ -43,7 +43,7 @@
               <v-btn
                 color="primary"
                 class="mt-5 text-capitalize"
-                v-if="$vuetify.breakpoint.smAndDown"
+                v-show="$vuetify.breakpoint.smAndDown"
                 outlined
               >Site Audit</v-btn>
             </v-col>
@@ -54,7 +54,7 @@
               lg="4"
               offset-md="1"
               offset-lg="1"
-              v-if="$vuetify.breakpoint.mdAndUp"
+              v-show="$vuetify.breakpoint.mdAndUp"
             >
               <v-card class="panel mb-5">
                 <v-container>
@@ -144,7 +144,7 @@
                     :class="hover ? 'primary--text' : 'medGrey--text'"
                   >{{ service.description }}</p>
                   <v-icon
-                    v-if="$vuetify.breakpoint.mdAndUp"
+                    v-show="$vuetify.breakpoint.mdAndUp"
                     class="primary--text"
                   >mdi-arrow-right-thick</v-icon>
                 </nuxt-link>
@@ -297,7 +297,7 @@ export default {
 /* Cover section */
 
 section.cover {
-  margin-top: -140px;
+  margin-top: -70px;
   border-bottom-left-radius: 100px;
   position: relative;
   z-index: 1;
