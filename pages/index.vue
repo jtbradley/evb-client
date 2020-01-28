@@ -377,7 +377,7 @@ section.cover {
 }
 
 .cover-creative.mob .frame {
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
   position: absolute;
