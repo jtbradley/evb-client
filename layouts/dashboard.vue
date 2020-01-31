@@ -1,6 +1,6 @@
 <template>
-<!-- Dashboard rendered as SPA -->
-<!-- <client-only> -->
+  <!-- Dashboard rendered as SPA -->
+  <!-- <client-only> -->
   <v-app>
     <dashNavbar />
     <v-content class="darkest--text">
@@ -9,26 +9,25 @@
       </v-container>
     </v-content>
 
-
-    <v-footer :fixed="fixed" app >
+    <v-footer :fixed="fixed" app>
       <span>&copy; 2019</span>
     </v-footer>
   </v-app>
-<!-- </client-only> -->
+  <!-- </client-only> -->
 </template>
 
 <script>
-import dashNavbar from './partials/dashNavbar'
+import dashNavbar from "./partials/dashNavbar";
 export default {
-  middleware: ['auth'],
+  middleware: ["auth"],
   components: {
     dashNavbar
   },
-  data () {
+  data() {
     return {
-      fixed: false,
-    }
+      fixed: false
+    };
   }
-}
+};
 </script>
 
